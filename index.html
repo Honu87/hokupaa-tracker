@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hōkūpaʻa Project Tracker (Debug Mode)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hōkūpaʻa Tracker</title>
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
       background-color: #f5f5f5;
+      margin: 0;
+      padding: 2rem;
     }
     h1 {
-      margin-top: 20px;
+      margin-bottom: 1rem;
     }
     .turtle-container {
       position: relative;
@@ -23,42 +25,31 @@
     }
     .hotspot {
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 49px;
+      height: 49px;
       border-radius: 50%;
-      border: 2px solid red;
-      background-color: rgba(0, 255, 0, 0.4);
-      color: black;
-      font-size: 16px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background-color: transparent;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Hōkūpaʻa Project Tracker (Debug Mode)</h1>
-  <p style="color: gray">Numbered debug circles. Let me know where to move them!</p>
+  <h1>Hōkūpaʻa Tracker</h1>
+  <p>Click each petal to track progress.</p>
   <div class="turtle-container">
     <img src="hokupaa_turtle_flower.png" class="turtle-image" alt="Turtle" />
 
-    <!-- Dot 2 corrected position -->
-    <div class="hotspot" style="top: 364px; left: 376px;" onclick="cycleColor(this)">1</div>
-    <div class="hotspot" style="top: 396px; left: 340px;" onclick="cycleColor(this)">2</div> <!-- moved right 16px -->
-    <div class="hotspot" style="top: 396px; left: 409px;" onclick="cycleColor(this)">3</div>
-    <div class="hotspot" style="top: 430px; left: 358px;" onclick="cycleColor(this)">4</div>
-    <div class="hotspot" style="top: 430px; left: 402px;" onclick="cycleColor(this)">5</div>
+    <!-- Final polished hotspot positions -->
+    <div class="hotspot" style="top: 364px; left: 376px;" onclick="cycleColor(this)"></div>
+    <div class="hotspot" style="top: 396px; left: 340px;" onclick="cycleColor(this)"></div>
+    <div class="hotspot" style="top: 396px; left: 409px;" onclick="cycleColor(this)"></div>
+    <div class="hotspot" style="top: 430px; left: 358px;" onclick="cycleColor(this)"></div>
+    <div class="hotspot" style="top: 430px; left: 402px;" onclick="cycleColor(this)"></div>
   </div>
 
   <script>
     function cycleColor(el) {
-      const colors = [
-        'rgba(0, 255, 0, 0.4)',
-        'rgba(255, 255, 0, 0.4)',
-        'rgba(255, 0, 0, 0.4)'
-      ];
+      const colors = ['transparent', 'green', 'yellow', 'red'];
       const current = el.style.backgroundColor;
       const next = colors[(colors.indexOf(current) + 1) % colors.length];
       el.style.backgroundColor = next;
