@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hōkūpaʻa Project Tracker</title>
+  <title>Hōkūpaʻa Project Tracker (Debug Mode)</title>
   <style>
     body {
       font-family: sans-serif;
@@ -26,28 +26,39 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      border: 3px solid #444;
-      background-color: green;
+      border: 2px solid red;
+      background-color: rgba(0, 255, 0, 0.4);
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Hōkūpaʻa Project Tracker</h1>
+  <h1>Hōkūpaʻa Project Tracker (Debug Mode)</h1>
+  <p style="color: gray">Numbered debug circles. Let me know where to move them!</p>
   <div class="turtle-container">
     <img src="hokupaa_turtle_flower.png" class="turtle-image" alt="Turtle" />
 
-    <!-- Circles now placed inside the petals -->
-    <div class="hotspot" style="top: 220px; left: 380px;" onclick="cycleColor(this)"></div> <!-- Top Petal -->
-    <div class="hotspot" style="top: 300px; left: 500px;" onclick="cycleColor(this)"></div> <!-- Right Petal -->
-    <div class="hotspot" style="top: 300px; left: 260px;" onclick="cycleColor(this)"></div> <!-- Left Petal -->
-    <div class="hotspot" style="top: 390px; left: 290px;" onclick="cycleColor(this)"></div> <!-- Bottom Left Petal -->
-    <div class="hotspot" style="top: 390px; left: 470px;" onclick="cycleColor(this)"></div> <!-- Bottom Right Petal -->
+    <!-- Numbered debug circles -->
+    <div class="hotspot" style="top: 220px; left: 380px;" onclick="cycleColor(this)">1</div> <!-- Top Petal -->
+    <div class="hotspot" style="top: 300px; left: 500px;" onclick="cycleColor(this)">2</div> <!-- Right Petal -->
+    <div class="hotspot" style="top: 300px; left: 260px;" onclick="cycleColor(this)">3</div> <!-- Left Petal -->
+    <div class="hotspot" style="top: 390px; left: 290px;" onclick="cycleColor(this)">4</div> <!-- Bottom Left Petal -->
+    <div class="hotspot" style="top: 390px; left: 470px;" onclick="cycleColor(this)">5</div> <!-- Bottom Right Petal -->
   </div>
 
   <script>
     function cycleColor(el) {
-      const colors = ['green', 'yellow', 'red'];
+      const colors = [
+        'rgba(0, 255, 0, 0.4)',
+        'rgba(255, 255, 0, 0.4)',
+        'rgba(255, 0, 0, 0.4)'
+      ];
       const current = el.style.backgroundColor;
       const next = colors[(colors.indexOf(current) + 1) % colors.length];
       el.style.backgroundColor = next;
