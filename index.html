@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hōkūpaʻa Tracker</title>
   <style>
     body {
       font-family: sans-serif;
-      text-align: center;
       background-color: #f5f5f5;
-      margin: 0;
       padding: 2rem;
+      text-align: center;
     }
     h1 {
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-    .turtle-container {
-      position: relative;
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      color: #004d40;
+    }
+    p {
+      max-width: 700px;
+      margin: 0.5rem auto;
+      line-height: 1.6;
+    }
+    .button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
       display: inline-block;
     }
-    .turtle-image {
-      width: 800px;
-      height: auto;
-    }
-    .hotspot {
-      position: absolute;
-      width: 49px;
-      height: 49px;
-      border-radius: 50%;
-      background-color: transparent;
-      cursor: pointer;
+    .button:hover {
+      background-color: #004d40;
     }
   </style>
 </head>
 <body>
-  <h1>Hōkūpaʻa Tracker</h1>
-  <p>Click each petal to track progress.</p>
-  <div class="turtle-container">
-    <img src="hokupaa_turtle_flower.png" class="turtle-image" alt="Turtle" />
+  <h1>Hōkūpaʻa Project Tracker</h1>
+  <p>Welcome! This interactive tracker helps you monitor progress on our five touchstone goals. Click each petal on the next page to indicate progress: green (strong), yellow (in progress), red (needs support).</p>
 
-    <!-- Final polished hotspot positions -->
-    <div class="hotspot" style="top: 364px; left: 376px;" onclick="cycleColor(this)"></div>
-    <div class="hotspot" style="top: 396px; left: 340px;" onclick="cycleColor(this)"></div>
-    <div class="hotspot" style="top: 396px; left: 409px;" onclick="cycleColor(this)"></div>
-    <div class="hotspot" style="top: 430px; left: 358px;" onclick="cycleColor(this)"></div>
-    <div class="hotspot" style="top: 430px; left: 402px;" onclick="cycleColor(this)"></div>
-  </div>
+  <h2>Our Guiding Principles</h2>
 
-  <script>
-    function cycleColor(el) {
-      const colors = ['transparent', 'green', 'yellow', 'red'];
-      const current = el.style.backgroundColor;
-      const next = colors[(colors.indexOf(current) + 1) % colors.length];
-      el.style.backgroundColor = next;
-    }
-  </script>
+  <h3>Relationships & Joy</h3>
+  <p>Cultivate a diverse learning environment that is engaging, energetic, and filled with moments of celebration. Prioritize strong relationships that foster trust, active listening, open communication, and developing the CORES.</p>
+
+  <h3>Student-Centered & Personalized</h3>
+  <p>Empowers student ownership through inquiry, project-based, and career-based learning that values diverse identities and perspectives. Uses flexible pacing, personalized support, and differentiation to meet individual learning needs.</p>
+
+  <h3>Authentic & Purposeful</h3>
+  <p>Connects content learning and the CORES to real-world applications, careers, and interdisciplinary experiences. Utilizes meaningful, performance and growth-based assessments beyond traditional tests.</p>
+
+  <h3>Community & ʻĀina-Based</h3>
+  <p>Rooted in Hawai‘i, we honor and integrate local culture and history. Fosters community partnerships, field studies, and service learning for purposeful engagement.</p>
+
+  <h3>Blended & Innovative</h3>
+  <p>Seamlessly combines in-person, virtual, and independent learning for engagement and flexibility. Necessitates creative problem-solving, experimentation, iteration, and the use of technology.</p>
+
+  <a class="button" href="tracker.html">Launch the Tracker</a>
 </body>
 </html>
