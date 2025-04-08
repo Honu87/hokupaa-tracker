@@ -23,12 +23,12 @@
     }
     .hotspot {
       position: absolute;
-      cursor: pointer;
-      border-radius: 50%;
-      opacity: 0.5;
-      border: 2px solid #444;
       width: 50px;
       height: 50px;
+      border-radius: 50%;
+      border: 3px solid #444;
+      background-color: green;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -37,12 +37,12 @@
   <div class="turtle-container">
     <img src="hokupaa_turtle_flower.png" class="turtle-image" alt="Turtle" />
 
-    <!-- Flower petal layout: shifted down ~160px -->
-    <div class="hotspot" style="top: 260px; left: 370px; background-color: green;" onclick="cycleColor(this)"></div> <!-- North -->
-    <div class="hotspot" style="top: 360px; left: 520px; background-color: green;" onclick="cycleColor(this)"></div> <!-- East -->
-    <div class="hotspot" style="top: 360px; left: 220px; background-color: green;" onclick="cycleColor(this)"></div> <!-- West -->
-    <div class="hotspot" style="top: 480px; left: 260px; background-color: green;" onclick="cycleColor(this)"></div> <!-- Southwest -->
-    <div class="hotspot" style="top: 480px; left: 480px; background-color: green;" onclick="cycleColor(this)"></div> <!-- Southeast -->
+    <!-- Circles now placed inside the petals -->
+    <div class="hotspot" style="top: 220px; left: 380px;" onclick="cycleColor(this)"></div> <!-- Top Petal -->
+    <div class="hotspot" style="top: 300px; left: 500px;" onclick="cycleColor(this)"></div> <!-- Right Petal -->
+    <div class="hotspot" style="top: 300px; left: 260px;" onclick="cycleColor(this)"></div> <!-- Left Petal -->
+    <div class="hotspot" style="top: 390px; left: 290px;" onclick="cycleColor(this)"></div> <!-- Bottom Left Petal -->
+    <div class="hotspot" style="top: 390px; left: 470px;" onclick="cycleColor(this)"></div> <!-- Bottom Right Petal -->
   </div>
 
   <script>
